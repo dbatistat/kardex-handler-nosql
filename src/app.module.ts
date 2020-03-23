@@ -7,7 +7,9 @@ import { ProductSchema } from './schemas/product.schema';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb: mongodb+srv://pharol:pharol@pharoldb-eyxl9.gcp.mongodb.net/kardex?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb: mongodb+srv://pharol:pharol@pharoldb-eyxl9.gcp.mongodb.net/kardex?retryWrites=true&w=majority', {
+      connectionName: 'products',
+    }),
     MongooseModule.forFeature([{name: 'Product', schema: ProductSchema}]),
     RabbitMQModule.forRoot({
       uri: 'amqp://user:kv8aq5f3tK9V@34.70.32.54:5672',
