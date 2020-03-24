@@ -31,8 +31,40 @@ Excercise: [Download](https://drive.google.com/open?id=1r_VOTZ6mGDl8WCkO4UfonBSn
 #### It is made up of the following projects:
 - [kardex-command](https://github.com/dbatistat/kardex-command): This project is in charge of executing all the transactions in kardex, it has implemented the end points to register and modify a transaction.
 
-- [kardex-query](https://github.com/dbatistat/kardex-query): This project is only used to perform queries that the system may require, for this case only the getAll() end point has been implemented.
+  Endpoints:
+  
+    - Description: Create product
+    - Path: http://localhost:3000/
+    - Method: POST
+    - Body:
+    ```metadata json
+    {
+    "productCode": "PR001017",
+    "registerDate": "01-30-2020",
+    "qty": 15,
+    "price": 90
+    }
+    ```
 
+  - Description: Update product
+  - Path: http://localhost:3000/
+  - Method: PUT
+  - Body:
+  ```metadata json
+  {
+  	"id": 362,
+  	"qty": 40,
+  	"price": 50
+  }
+  ```
+  
+- [kardex-query](https://github.com/dbatistat/kardex-query): This project is only used to perform queries that the system may require, for this case only the getAll() end point has been implemented.
+  
+  Endpoints:
+    - Description: Get all products
+    - Path: http://localhost:3000/products
+    - Method: GET
+    
 - [kardex-handler-sql](https://github.com/dbatistat/kardex-handler-sql): It is in charge of making create and modify the transactions with their respective validations to a relational database. It was created with the purpose of taking the time to create one by one the transactions as the RabbitMQ queue sends them.
 
 - [kardex-handle-nosql](https://github.com/dbatistat/kardex-handler-nosql): It is in charge of creating and calculating the quick view of the kardex, having data calculated for a quick consultation.
