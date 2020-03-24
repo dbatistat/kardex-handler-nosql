@@ -1,5 +1,5 @@
 export class ProductDto {
     productCode: string;
-    quantity: number;
+    qty: number;
     price: number;
 }

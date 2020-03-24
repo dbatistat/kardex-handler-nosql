@@ -13,7 +13,7 @@ import { ProductSchema } from './schemas/product.schema';
       exchanges: [
         {
           name: 'kardex',
-          type: 'direct',
+          type: 'topic',
         },
       ],
     }),
